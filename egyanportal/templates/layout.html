@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to {% block title %}{% endblock %}</title>
+    <link rel="icon" href="{% static 'images/logo1.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- googlefonts -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fontawesome -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css" />
+    <!-- fontawesome -->
+</head>
+<body style="font-family: Poppins, sans-serif;">
+    <!-- this is container -->
+    <div class="container-fluid">
+        <!-- this is headline -->
+        <div class="row text-light py-2" style="background-color: rgb(150, 5, 5);">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <span><i class="fa-solid fa-phone fa-bounce"></i> +91 7080102007</span>
+                <span class="mx-3"><i class="fa-solid fa-envelope fa-beat"></i> nouegyanhelp@gmail.com</span>
+            </div>
+            <div class="col-md-5 text-end">
+                <span id="i1"></span>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row text-light" style="background-color: rgb(150, 5, 5);">
+            <div class="col-md-12 py-3 my-auto" style="border: 2px dotted yellow;">
+                <p class="text-center my-auto">For Admission and Examination related query, Kindly call on University helpline Numbers 9341508580,9341508577,0612-2201013 & 0612-2206916</p>
+            </div>
+        </div>
+        <!-- this is headline -->
+        <!-- this is header -->
+        <div class="container">
+            <div class="row p-2">
+                <div class="col-md-1 p-2">
+                    <img src="{% static 'images/logo1.png' %}" alt="" class="w-100"/>
+                </div>
+                <div class="col-md-4 my-auto">
+                    <h4 class="my-auto fw-bold" style="color: rgb(150, 5, 5);">NOU e-Gyan PORTAL</h4>
+                    <p>(A Concept by Nalanda Open University)</p>
+                </div>
+                <div class="col-md-7 text-end my-auto">
+                    <span style="font-size: 25px; border: 1px solid #4fa6e8; border-radius: 100%;"><i class="fa-brands fa-twitter px-1" style="color: #4fa6e8;"></i></span>
+                    <span style="font-size: 25px; border: 1px solid #154393; border-radius: 100%;"><i class="fa-brands fa-facebook px-1" style="color: #154393;"></i></span>
+                    <span style="font-size: 25px; border: 1px solid #d30d3f; border-radius: 100%;"><i class="fa-brands fa-instagram px-1" style="color: #d30d3f;"></i></span>
+                    <span style="font-size: 25px; border: 1px solid #2055b1; border-radius: 100%;"><i class="fa-brands fa-linkedin px-1" style="color: #2055b1;"></i></span>
+                    <span style="font-size: 25px; border: 1px solid #f7020f; border-radius: 100%;"><i class="fa-brands fa-youtube px-1" style="color: #f7020f;"></i></span>
+                </div>
+            </div>
+        </div>
+        <!-- this is header -->
+        <!-- navbar -->
+        <div class="row p-0" data-bs-theme="dark">
+            <div class="col-md-12 p-0">
+                <nav class="navbar navbar-expand-lg py-4 w-100" style="background-color: gray;">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <span><h1 class="text-light">WELCOME</h1></span>
+                        <span><h1 class="text-warning">&nbsp;STUDENTS</h1></span>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-5 mb-2 mb-lg-0 ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{% url 'home' %}">Home</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'aboutportal' %}">About Portal</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'courses' %}"><i class="fa-solid fa-book-open fa-flip"></i> Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'services' %}"><i class="fa-solid fa-mobile-screen-button fa-shake"></i> Services</a>
+                                </li>
+                                <!--<li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'maintenance' %}"><i class="fa-solid fa-graduation-cap fa-bounce"></i> Study Centre</a>-->
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'homelogin' %}"><i class="fa-solid fa-graduation-cap fa-bounce"></i> Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'registration' %}"><i class="fa-solid fa-address-card fa-bounce"></i> Registration</a>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'contact' %}"><i class="fa-solid fa-phone-flip fa-shake"></i> Contact</a>
+                                </li>
+                                <!--<li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'adminpanel' %}"><i class="fa-solid fa-user-tie fa-flip"></i> Admin</a>
+                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- navbar -->
+
+        {% block main %}
+        {% endblock %}
+
+        <!-- footer section -->
+        <div class="row p-0">
+            <div class="col-md-12 p-0">
+                <!-- Footer -->
+<footer class="text-center text-lg-start text-muted w-100" style="background-color: rgb(150, 5, 5);">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block py-3" style="color: white;">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+            <!-- Facebook -->
+            <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!" role="button">
+                <i class="fab fa-facebook-f" style="color: darkred; border: 1px solid white; padding: 10px; border-radius: 100%; background-color: white;"></i>
+            </a>
+      
+            <!-- Twitter -->
+            <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!" role="button">
+                <i class="fab fa-twitter" style="color: darkred; border: 1px solid white; padding: 10px; border-radius: 100%; background-color: white;"></i>
+            </a>
+      
+            <!-- Google -->
+            <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!" role="button">
+                <i class="fab fa-google" style="color: darkred; border: 1px solid white; padding: 10px; border-radius: 100%; background-color: white;"></i>
+            </a>
+      
+            <!-- Instagram -->
+            <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!" role="button">
+                <i class="fab fa-instagram" style="color: darkred; border: 1px solid white; padding: 10px; border-radius: 100%; background-color: white;"></i>
+            </a>
+      
+            <!-- Linkedin -->
+            <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!" role="button">
+                <i class="fab fa-linkedin-in" style="color: darkred; border: 1px solid white; padding: 10px; border-radius: 100%; background-color: white;"></i>
+            </a>
+      
+            <!-- Github -->
+            <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!" role="button">
+                <i class="fab fa-github" style="color: darkred; border: 1px solid white; padding: 10px; border-radius: 100%; background-color: white;"></i>
+            </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" style="color: white;">
+            <!-- Content -->
+             
+            <h5 class="text-uppercase mb-3 fw-bold text-center">
+                <img src="{% static 'images/logo1.png' %}" width="100px" height="100px" style=" border: 5px solid rgb(230, 255, 45); background-color: white; border-radius: 100%; padding: 5px;">
+            </h5>
+            <h5 class="text-uppercase fw-bold text-center"><u>NOU e-GYAN PORTAL</u></h5>
+            <p style="text-align: justify;">
+                Nalanda Open University is a State Open University duly established under the Act of Bihar Government and is also recognized by Distance Education Council, IGNOU, Maidan Garhi, New Delhi.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="color: white;">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              USEFUL LINKS
+            </h6>
+            <p>
+              <a href="{% url 'home' %}" class="text-reset" style="text-decoration: none;"><i class="fa-solid fa-house"></i> Home</a>
+            </p>
+            <p>
+              <a href="{% url 'aboutportal' %}" class="text-reset" style="text-decoration: none;"><i class="fa-solid fa-address-card"></i> About Portal</a>
+            </p>
+            <p>
+              <a href="{% url 'services' %}" class="text-reset" style="text-decoration: none;"><i class="fa-brands fa-elementor"></i> Services</a>
+            </p>
+            <p>
+              <a href="{% url 'contact' %}" class="text-reset" style="text-decoration: none;"><i class="fa-solid fa-square-phone-flip"></i> Contact Us</a>
+            </p>
+            <p>
+                <a href="{% url 'courses' %}" class="text-reset" style="text-decoration: none;"><i class="fa-solid fa-book-open-reader"></i> Courses</a>
+            </p>
+            <p>
+                <a href="{% url 'maintenance' %}" class="text-reset" style="text-decoration: none;"><i class="fa-solid fa-graduation-cap"></i> Study Centre</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="color: white;">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              CONTACT INFO
+            </h6>
+            <p>
+                <i class="fa-solid fa-location-dot fa-2x"></i> 
+                2nd/3rd Floor, Biscomaun Bhawan, Gandhi Maidan, Patna 800 001 (BIHAR).
+            </p>
+            <p>
+                <i class="fa-solid fa-phone-volume fa-fade fa-2x"></i> 
+                +91 7080102007
+                <br />
+                GIve us a call
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="color: white;">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">SUBSCRIBE</h6>
+            <p>
+                Fill the detail below to receive the manual of the NOU e-Gyan Portal
+            </p>
+            <p>
+                <form class="d-flex" role="search" data-bs-theme="light">
+                    <input class="form-control me-2" type="email" aria-label="Search" placeholder="Enter E-mail address" style="background-color: white; width: 200px;">
+                    <button class="btn btn-outline-light" type="submit">Subscribe</button>
+                </form>
+            </p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); color: white;">
+        © Copyright 2024 Designed & Developed By | 
+      <a class="text-reset fw-bold" href="http://www.softproindia.in/" target="_blank"> Softpro India Computer Technologies (P) Ltd.</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+            </div>
+        </div>
+        <!-- footer section -->
+
+     </div>
+    <!-- this is container -->
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    
+    <script>
+        var a = document.getElementById('i1').innerHTML=Date();
+    </script>
+</body>
+</html>

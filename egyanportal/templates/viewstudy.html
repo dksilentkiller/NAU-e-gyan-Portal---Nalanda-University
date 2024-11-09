@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'adminpanel.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block student %}
+    <h1 class="text-center mt-4">View Study Material</h1>
+    <div class="row m-4">
+        <div class="col-md-12">
+            <table class="table table-bordered text-center">
+                <tr class="table-dark" style="border: 1px solid white;">
+                    <th style="color: white;">#</th>
+                    <th style="color: white;">Program</th>
+                    <th style="color: white;">Branch</th>
+                    <!--<th style="color: white;">Year</th>-->
+                    <th style="color: white;">Subject</th>
+                    <th style="color: white;">File Name</th>
+                    <th style="color: white;">Download</th>
+                </tr>
+                {% for i in papa %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.program}}</td>
+                    <td>{{i.Branch}}</td>
+                    <!--<td>{{i.Year}}</td>-->
+                    <td>{{i.subject}}</td>
+                    <td>{{i.file_name}}</td>
+                    <td><a href="{{i.new_file.url}}">Read More</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% extends 'adminzone.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block mainadmin %}
+        <form action="{% url 'updateform' %}" method="post">
+            {% csrf_token %}
+                <div class="row m-5 mt-3 shadow" style="background-color: white;">
+                    <div class="col-md-6 mt-3">
+                        <h6>Enter your Enrollment Number<span style="color: red;"> *</span></h6>
+                        <input type="text" value="{{qw.enrollment}}" name="enrollment" class="form-control rounded-0 border-dark" placeholder="Enrollment Number" readonly required/>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <h6>Enter your Name<span style="color: red;"> *</span></h6>
+                        <input type="text" name="name" value="{{qw.name}}" class="form-control rounded-0 border-dark" placeholder="Name" required/>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <h6>Enter your Father's Name<span style="color: red;"> *</span></h6>
+                        <input type="text" name="fname" value="{{qw.fname}}" class="form-control rounded-0 border-dark" placeholder="Father's Name" required/>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <h6>Enter your Mother's Name<span style="color: red;"> *</span></h6>
+                        <input type="text" name="mname" value="{{qw.mname}}" class="form-control rounded-0 border-dark" placeholder="Mother's Name" required/>
+                    </div>
+                    <div class="col-md-6" style="margin-top: 40px;">
+                        <h6>Enter your Gender<span style="color: red;"> *</span></h6>
+                        <input type="radio" name="gender" value="male"/> Male&nbsp; 
+                        <input type="radio" name="gender" value="female"/> Female&nbsp; 
+                        <input type="radio" name="gender" value="other"/> Other&nbsp;
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <h6>Enter your Address<span style="color: red;"> *</span></h6>
+                        <textarea name="address" class="form-control border-dark rounded-0" placeholder="Address">{{qw.address}}</textarea>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <h6>Enter your Course<span style="color: red;"> *</span></h6>
+                        <input type="text" name="course" value="{{qw.course}}" class="form-control rounded-0 border-dark" placeholder="Course" required/>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <h6>Enter your Branch<span style="color: red;"> *</span></h6>
+                        <input type="text" name="branch" value="{{qw.branch}}" class="form-control rounded-0 border-dark" placeholder="Branch" required/>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <h6>Enter your Year<span style="color: red;"> *</span></h6>
+                        <input type="text" name="year" value="{{qw.year}}" class="form-control rounded-0 border-dark" placeholder="Year" required/>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <h6>Enter your Contact Number<span style="color: red;"> *</span></h6>
+                        <input type="text" name="mobile" value="{{qw.mobile}}" class="form-control rounded-0 border-dark" placeholder="Contact Number" required/>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <h6>Enter your E-mail<span style="color: red;"> *</span></h6>
+                        <input type="email" name="email" value="{{qw.email}}" class="form-control rounded-0 border-dark" placeholder="E-mail address" readonly required/>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <h6>Enter your Password<span style="color: red;"> *</span></h6>
+                        <input type="password" name="password" value="{{qw.password}}" class="form-control rounded-0 border-dark" placeholder="Password" readonly required/>
+                    </div>
+                    <div class="col-md-12 mt-4 mb-4">
+                        <input type="submit" class="btn w-100 fw-bold" style="background-color: darkred; border-radius: 0px; color: white;"/>
+                    </div>
+                </form>
+    {% endblock %}
+</body>
+</html>

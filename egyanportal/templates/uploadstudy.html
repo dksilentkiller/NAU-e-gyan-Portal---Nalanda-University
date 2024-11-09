@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% extends 'adminzone.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block mainadmin %}
+    {% for i in messages %}
+    <div class="alert alert-success" role="alert">
+        {{i}}
+    </div>
+    {% endfor %}
+    <h2 class="text-center fw-bold mt-2">UPLOAD STUDY MATERIALS</h2>
+    <form action="{% url 'usmsave' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row border p-4 mt-4 bg-light">
+            <div class="col-md-6">
+                <p>Select Program</p>
+                <select name="program" id="" class="form-control rounded-0 border-dark">
+                    <option value="">--Select Program--</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="BCA">BCA</option>
+                    <option value="MCA">MCA</option>
+                    <option value="B.Tech">B. Tech</option>
+                    <option value="M.Tech">M. Tech</option>
+                    <option value="Phd">P.hd</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <p>Select Branch</p>
+                <select name="Branch" id="" class="form-control rounded-0 border-dark">
+                    <option value="">--Select Program--</option>
+                    <option value="CSE">CSE</option>
+                    <option value="IT">IT</option>
+                    <option value="ME">ME</option>
+                    <option value="ECE">ECE</option>
+                    <option value="CE">CE</option>
+                    <option value="EE">EE</option>
+                </select>
+            </div>
+            <div class="col-md-6 mt-4">
+                <p>Select Year</p>
+                <select name="Year" id="" class="form-control rounded-0 border-dark">
+                    <option value="">--Select Program--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="col-md-6 mt-4">
+                <p>Enter your Subject</p>
+                <input type="text" name="subject" class="form-control rounded-0 border-dark">
+            </div>
+            <div class="col-md-6 mt-4">
+                <p>Enter your File Name</p>
+                <input type="text" name="file_name" class="form-control rounded-0 border-dark">
+            </div>
+            <div class="col-md-6 mt-4">
+                <p>Upload File</p>
+                <input type="file" name="new_file" class="form-control rounded-0 border-dark">
+            </div>
+            <div class="col-md-12 mt-5">
+                <input type="submit" name="" class="btn w-100 rounded-0 p-2" style="background-color: darkred; color: white;">
+            </div>
+        </div>
+    </form>
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <table class="table table-bordered text-center">
+                <tr class="table-dark" style="border: 1px solid white;">
+                    <th style="color: white;">#</th>
+                    <th style="color: white;">Program</th>
+                    <th style="color: white;">Branch</th>
+                    <th style="color: white;">Year</th>
+                    <th style="color: white;">Subject</th>
+                    <th style="color: white;">File Name</th>
+                    <th style="color: white;">Download</th>
+                    <th style="color: white;">Action</th>
+                </tr>
+                {% for i in ups %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.program}}</td>
+                    <td>{{i.Branch}}</td>
+                    <td>{{i.Year}}</td>
+                    <td>{{i.subject}}</td>
+                    <td>{{i.file_name}}</td>
+                    <td><a href="{{i.new_file.url}}">Read More</a></td>
+                    <td><a href="{% url 'deleteusm' i.id %}"><i class="fa-solid fa-trash" style="color: #ec092b;"></i></a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

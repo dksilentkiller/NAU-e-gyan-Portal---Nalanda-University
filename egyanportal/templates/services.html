@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+{% extends 'layout.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block main %}
+    <div class="row">
+        <div class="col-sm-12" style="background-image: linear-gradient(rgba(71, 70, 70, 0.96),rgba(65, 59, 59, 0.76)) ,url('../static/images/servcbg.png'); height: 300px; background-repeat: no-repeat; background-size: cover;">
+            <h1 style="margin-left: 50px; margin-top: 110px; color: white;">Services PAGE</h1>
+            <h6 style="margin-left: 52px; margin-top: 15px; color: white;"><a style="text-decoration: none; color: gold;">Services</a>&nbsp;/&nbsp;<a style="text-decoration: none;">Home</a></h6>
+        </div>
+        <div class="row ps-5 mt-3">
+            <div class="col-md-12 px-4 text-center my-3">
+                <h5 style="color: #5f6063;"> FEATURES</h5>
+                <h3 class="fw-bold"><span>Student </span><span style="color: darkred;"> Services</span></h3>
+                <hr class="fw-bold" style="color: rgb(207, 176, 2);" />
+                <p>The NOU E-Gyan Portal is your gateway to a wide range of academic resources, tools, and services designed to enhance your learning experience. Whether you're a student, faculty member, or lifelong learner, our portal provides everything you need to succeed in your educational journey. Explore our comprehensive services below.</p>
+            </div>
+        </div>
+        <!--services-->
+        <div class="container text-center py-5">
+            <div class="row px-5">
+                <!-- card 1 -->
+                <div class="col-md-6">
+                    <div class="card zoom-out mb-3 mx-5" style="max-width: 600px; border: none; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div class="row g-0">
+                          <div class="col-md-4 text-center " style="border-radius: 15px;">
+                            <img src="{% static 'images/lgs.avif' %}" class="img-fluid" alt="Service Image" style="border-radius: 15px 0 0 15px; object-fit: cover; height: 100%; transition: transform 0.3s ease;">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body" style="padding: 20px;">
+                              <h5 class="card-title" style="font-weight: bold; font-size: 1.5rem; color: darkred;">Login</h5>
+                              <p class="card-text" style="color: #6c757d; text-align: justify;">Make your way into the portal through the login page where different users are provided with a username and password to gain access to theuniversity’s programs and other learning related materials.</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 1 -->
+
+                <!-- card 2 -->
+                <div class="col-md-6">
+                    <div class="card zoom-out mb-3 mx-5" style="max-width: 600px; border: none; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div class="row g-0">
+                          <div class="col-md-8">
+                            <div class="card-body" style="padding: 20px;">
+                              <h5 class="card-title" style="font-weight: bold; font-size: 1.5rem; color: darkred;">Feedback</h5>
+                              <p class="card-text" style="color: #6c757d; text-align: justify;">Constructive feedback from students is a valuable resource for improving the learning process and allows the students to provide feedback to address aspects of the course and self-learning material.</p>
+
+                            </div>
+                          </div>
+                          <div class="col-md-4 text-center " style="border-radius: 15px;">
+                            <img src="{% static 'images/feeds.png' %}" class="img-fluid" alt="Service Image" style="border-radius: 15px 0 0 15px; object-fit: cover; height: 100%; transition: transform 0.3s ease;">
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 2 -->
+
+                <!-- card 3 -->
+                <div class="col-md-6 mt-5">
+                    <div class="card zoom-out mx-5" style="max-width: 600px; border: none; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div class="row g-0">
+                          <div class="col-md-8">
+                            <div class="card-body" style="padding: 20px;">
+                              <h5 class="card-title" style="font-weight: bold; font-size: 1.5rem; color: darkred;">Self-Learning Material</h5>
+                              <p class="card-text" style="color: #6c757d; text-align: justify;">IThe students enrolled in the university have a wide range of courses available online covering different subjects. These courses include videos, images, word/PDF files,external links, assignments and quizzes for their study material.</p>
+                              
+                            </div>
+                          </div>
+                          <div class="col-md-4 text-center " style="border-radius: 15px;">
+                            <img src="{% static 'images/selfs.avif' %}" class="img-fluid" alt="Service Image" style="border-radius: 15px 0 0 15px; object-fit: cover; height: 100%; transition: transform 0.3s ease;">
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 3 -->
+
+                <!-- card 4 -->
+                <div class="col-md-6 mt-5">
+                    <div class="card zoom-out mx-5" style="max-width: 600px; border: none; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div class="row g-0">
+                            <div class="col-md-4 text-center" style="border-radius: 15px;">
+                                <img src="{% static 'images/pers.png' %}" class="img-fluid" alt="Service Image" style="border-radius: 15px 0 0 15px; object-fit: cover; height: 100%; transition: transform 0.3s ease;">
+                            </div>
+                          <div class="col-md-8">
+                            <div class="card-body" style="padding: 20px;">
+                              <h5 class="card-title" style="font-weight: bold; font-size: 1.5rem; color: darkred;">Performance</h5>
+                              <p class="card-text" style="color: #6c757d; text-align: justify;">The enrolled students will have courses ranging from certificate to degree course. The progress reports of these courses can be monitored by the students on their portal and give the student an in-depth analysis of the progress.</p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 4 -->
+                
+                <!-- card 5 -->
+                <div class="col-md-6 mt-5">
+                    <div class="card zoom-out mb-3 mx-5" style="max-width: 600px; border: none; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div class="row g-0">
+                            <div class="col-md-4 text-center " style="border-radius: 15px;">
+                                <img src="{% static 'images/sells.jpg' %}" class="img-fluid" alt="Service Image" style="border-radius: 15px 0 0 15px; object-fit: cover; height: 100%; transition: transform 0.3s ease;">
+                            </div>
+                          <div class="col-md-8">
+                            <div class="card-body" style="padding: 20px;">
+                              <h5 class="card-title" style="font-weight: bold; font-size: 1.5rem; color: darkred;">Self-Assessment Tools</h5>
+                              <p class="card-text" style="color: #6c757d; text-align: justify;">Self-Assessment allows the student to analyse and evaluate their academic performance through various Self-Assessment tools like e-Contents, Videos, assignments, quizzes/MCQs, external links and others. The self-assessment also enables testing the progress and learn better.</p>
+                             
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 5 -->
+
+                <!-- card 6 -->
+                <div class="col-md-6 mt-5">
+                    <div class="card zoom-out mb-3 mx-5" style="max-width: 600px; border: none; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div class="row g-0">
+                            
+                          <div class="col-md-8">
+                            <div class="card-body" style="padding: 20px;">
+                              <h5 class="card-title" style="font-weight: bold; font-size: 1.5rem; color: darkred;">Dashboard</h5>
+                              <p class="card-text" style="text-align: justify; color: #6c757d;">The AI-based dashboard will serve as an administrative home page to access key Information about Course Details, Assignments, Quizzes/MCQs, Self-Learning Materials, Course Catalogue, Progress Report, Notifications and other useful tabs and a provision for Help to guide ad navigate through the portal.</p>  
+                            </div>
+                          </div>
+                          <div class="col-md-4 text-center " style="border-radius: 15px;">
+                            <img src="{% static 'images/dash.png' %}" class="img-fluid" alt="Service Image" style="border-radius: 15px 0 0 15px; object-fit: cover; height: 100%; transition: transform 0.3s ease;">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 6 -->
+
+                <!-- card 7 -->
+                <div class="col-md-6 mt-5">
+                    <div class="card zoom-out mb-3 mx-5" style="max-width: 600px; border: none; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div class="row g-0">
+                          <div class="col-md-8">
+                            <div class="card-body" style="padding: 20px;">
+                              <h5 class="card-title" style="font-weight: bold; font-size: 1.5rem; color: darkred;">e-Books</h5>
+                              <p class="card-text" style="color: #6c757d; text-align: justify;">The E-Books will give a digital access to the self- learning material that are course related e-Contents, presentations, PDF or Word file notes, videos and external links and self-assessment materials for the students like assignments and quizzes on a single platform.</p>
+                              
+                            </div>
+                          </div>
+                          <div class="col-md-4 text-center" style="border-radius: 15px;">
+                            <img src="{% static 'images/ebs.jpg' %}" class="img-fluid" alt="Service Image" style="border-radius: 15px 0 0 15px; object-fit: cover; height: 100%; transition: transform 0.3s ease;">
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 7 -->
+
+                <!-- card 8 -->
+                <div class="col-md-6 mt-5">
+                    <div class="card zoom-out mb-3 mx-5" style="max-width: 600px; border: none; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div class="row g-0">
+                          <div class="col-md-4 text-center" style="border-radius: 15px;">
+                            <img src="{% static 'images/cats.jpg' %}" class="img-fluid" alt="Service Image" style="border-radius: 15px 0 0 15px; object-fit: cover; height: 100%; transition: transform 0.3s ease;">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body" style="padding: 20px;">
+                              <h5 class="card-title" style="font-weight: bold; font-size: 1.5rem; color: darkred;">Course Catalogue</h5>
+                              <p class="card-text" style="color: #6c757d; text-align: justify;">The course catalogue is a document that lists the courses available in the university with complete description. This course catalogue also provides a description that includes important details of the course like credits, course durations, modules, prerequisites and more.</p>
+                              
+                            </div>
+                          </div>
+                          
+                        </div>
+                    </div>
+                </div>
+                <!-- card 8 -->
+            </div>
+        </div>
+    </div>
+    <!--services-->
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% extends 'adminzone.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block mainadmin %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center mt-3">View Enquiries</h1>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <table class="table text-center table-bordered">
+                <tr class="table-dark">
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>Contact Number</td>
+                    <td>E-mail Address</td>
+                    <td>Enquiry Text</td>
+                    <td>Enquiry Date</td>
+                    <td>Action</td>
+                </tr>
+                {% for i in enqs %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.contactno}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.enq}}</td>
+                    <td>{{i.enqdate}}</td>
+                    <td>
+                        <a href="{% url 'deleteenq' i.id %}"><i class="fa-solid fa-trash" style="color: red;"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

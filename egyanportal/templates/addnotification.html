@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'adminzone.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block mainadmin %}
+    {% for i in messages %}
+    <div class="alert alert-success m-3" role="alert">
+        {{i}}
+    </div>
+    {% endfor %}
+    <div class="row">
+        <h1 class="text-center mt-2">Notifications</h1>
+        <div class="col-md-12">
+            <form action="{% url 'notisave' %}" method="post" class="bg-light shadow border p-4 m-4">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Add Notification</p>
+                        <input type="text" name="notm" placeholder="Add Text" class="border-dark form-control rounded-0">
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <input type="submit" value="Add Notification" style="background-color: darkred; color: white;" class="w-100 form-control text-center p-2 rounded-0">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

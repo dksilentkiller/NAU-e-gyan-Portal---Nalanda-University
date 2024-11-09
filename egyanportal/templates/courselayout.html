@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends 'layout.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block main %}
+    <div class="row">
+        <div class="col-sm-12" style="background-image: linear-gradient(rgba(71, 70, 70, 0.96),rgba(65, 59, 59, 0.76)) ,url('../static/images/bg2.jpg'); height: 300px; background-repeat: no-repeat; background-size: cover;">
+            <h1 style="margin-left: 50px; margin-top: 110px; color: white;">COURSES PAGE</h1>
+            <h6 style="margin-left: 52px; margin-top: 15px; color: white;"><a style="text-decoration: none; color: gold;">Courses</a>&nbsp;/&nbsp;<a style="text-decoration: none;">Home</a></h6>
+        </div>
+    </div>
+                    <!-- navbar -->
+        <div class="row p-0">
+            <div class="col-md-12 p-0">
+                <nav class="navbar navbar-expand-lg py-4 w-100" style="background-color: darkred;">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" style="color: gold;" aria-current="page" href="{% url 'courses' %}">All</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" style="color: gold;" aria-current="page" href="{% url 'ugcourse' %}"> | &nbsp;UG Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" style="color: gold;" aria-current="page" href="{% url 'pgcourse' %}"> | &nbsp;PG Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" style="color: gold;" aria-current="page" href="{% url 'dpcourse' %}"> | &nbsp;Diploma Courses</a>
+                                </li>
+                                <!--<li class="nav-item">
+                                    <a class="nav-link active" style="color: gold;" aria-current="page" href="{% url 'cfcourse' %}"> | &nbsp;Certification Courses</a>
+                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- navbar -->
+    {% block service %}
+    {% endblock %}
+    {% endblock %}
+</body>
+</html>

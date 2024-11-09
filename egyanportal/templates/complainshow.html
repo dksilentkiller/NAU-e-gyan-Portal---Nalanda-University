@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends 'adminzone.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block mainadmin %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center mt-3">Complains</h1>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <table class="table text-center table-bordered">
+                <tr class="table-dark">
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>Program</td>
+                    <td>Branch</td>
+                    <td>Contact Number</td>
+                    <td>E-mail Address</td>
+                    <td>Subject</td>
+                    <td>Complaint</td>
+                    <!--<td>Status</td>-->
+                    <td>Posted Date</td>
+                    <td>Action</td>
+                </tr>
+                {% for i in cps %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.program}}</td>
+                    <td>{{i.branch}}</td>
+                    <td>{{i.contactno}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.Subject}}</td>
+                    <td style="text-align: justify;">{{i.comp}}</td>
+                    <!--<td>{{i.status}}</td>-->
+                    <td>{{i.reqdate}}</td>
+                    <td>
+                        <a href="{% url 'deletecomps' i.id %}"><i class="fa-solid fa-trash" style="color: red;"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

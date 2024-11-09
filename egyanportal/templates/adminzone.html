@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Main Admin Zone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fontawesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css" />
+    <!-- fontawesome -->
+</head>
+  <body style="font-family:Ubuntu, sans-serif;">
+        <!-- this is container  -->
+         <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 p-4 fixed-top" style="background-color: darkred; color:white;">
+                <div class="row ">
+                    <div class="col-md-4">
+                        <h2>Admin Zone</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 id="d" class="text-center"></h5>
+                        <h6 id="t" class="text-center"></h6>
+                    </div>
+                    <div class="col-md-4 text-end "><img src="{% static 'images/logo1.png' %}" height="60px" style="background-color: white;" class="rounded-circle p-2" alt=""></div>
+                </div>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-2 text-start ps-3" style="background-color: darkred;  color:white; height:100vh; position: fixed; margin-top: 105px; padding-top: 10px;">
+                    <a href="{% url 'showdata' %}" style="text-decoration: none; color:white;"><h6>&nbsp;<i class="fa-solid fa-user"></i> &nbsp;Manage Students</h6></a>
+                    <hr>
+                    <a href="{% url 'uploadstudy' %}" style="text-decoration: none; color:white;"><h6>&nbsp;<i class="fa-solid fa-book-open"></i> &nbsp;Upload Study Materials</h6></a>
+                    <hr>
+                    <a href="{% url 'uploadlecture' %}" style="text-decoration: none; color:white;"><h6>&nbsp;<i class="fa-solid fa-link"></i> &nbsp;Upload Class Lectures</h6></a>
+                    <hr>
+                    <a href="{% url 'uploadassignment' %}" style="text-decoration: none; color:white;"><h6>&nbsp;<i class="fa-solid fa-file-lines"></i> &nbsp;Upload Assignments</h6></a>
+                    <hr>
+                    <a href="{% url 'addcourse' %}" style="text-decoration: none; color:white;"><h6>&nbsp;<i class="fa-solid fa-file-lines"></i> &nbsp;Add Program</h6></a>
+                    <hr>
+                    <a href="{% url 'uploadassignment' %}" style="text-decoration: none; color:white;"><h6>&nbsp;<i class="fa-solid fa-file-lines"></i> &nbsp;Add Branch</h6></a>
+                    <hr>
+                    <a href="{% url 'feedbackshow' %}" style="text-decoration: none; color:white;"><h6>&nbsp;<i class="fa-solid fa-comments"></i> &nbsp;View Feedbacks</h6></a>
+                    <hr>
+                    <a href="{% url 'complainshow' %}" style="text-decoration: none; color:white;"><h6>&nbsp;<i class="fa-solid fa-circle-exclamation"></i> &nbsp;View Complaints</h6></a>
+                    <hr>
+                    <a href="{% url 'viewenquiry' %}" style="text-decoration: none; color:white;"><h6>&nbsp;<i class="fa-solid fa-circle-question"></i> &nbsp;View Enquries</h6></a>
+                    <hr>
+                    <a href="{% url 'addnotification' %}" style="text-decoration: none; color:white;"><h6>&nbsp;<i class="fa-solid fa-bell"></i> &nbsp;Add Notifications</h6></a>
+                    <hr>
+                    <a href="{% url 'logout' %}" style="text-decoration: none; color:white;"><h6>&nbsp;<i class="fa-solid fa-right-from-bracket"></i> &nbsp;Log Out</h6></a>
+
+                </div>
+                <div class="col-md-10 p-5" style="margin-left:16.5%; margin-top:70px; background-color: rgba(231, 225, 225,0.9);">
+
+                {% block mainadmin %}
+                
+                {% endblock %}
+                </div>
+            </div>
+         </div>
+        <!-- this is container  -->
+        <!--datatable-->
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+<!--datatable-->
+
+
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+
+        $('#example').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print', 'pageLength'
+            ],
+            lengthMenu: [
+                [10, 25, 50, 100, -1],
+                ['10', '25', '50', '100', 'all']
+            ]
+        });
+
+
+    });
+
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        var b = document.getElementById('d').innerHTML= new Date().toDateString();
+        
+    </script>
+    <script>
+        function updateTime() {
+            // Display current time
+            var c = document.getElementById('t').innerHTML= new Date().toLocaleTimeString();
+            var timeElement = document.getElementById('t');
+            timeElement.innerHTML = new Date().toLocaleTimeString();
+    
+            // Countdown timer from 59 to 0
+            var secondsLeft = 59 - new Date().getSeconds();
+            var countdownElement = document.getElementById('t');
+        }
+    
+        // Update the time and countdown every second
+        setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>

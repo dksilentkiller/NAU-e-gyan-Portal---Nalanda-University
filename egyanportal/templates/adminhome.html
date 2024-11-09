@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% extends 'adminzone.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block mainadmin %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center mt-3 fw-bold">Admin Home Page</h1>
+        </div>
+    </div>
+    <div class="row mt-3 shadow" style="height: 350px; background-color: white;">
+        <!--<div class="col-md-12 border">-->
+            <div class="col-md-6 p-5" style="float: left;">
+                <h4 class="fw-bolder mt-5" style="color: darkred;">Welcome to the Nou e-Gyan Admin Dashboard!</h4>
+                <p class="mt-3 fs-5" style="text-align: justify;">Your dashboard is all set and ready to use. Here, you can effortlessly manage and access study materials, assignments, lectures, feedback, and much more. Dive in and make the most of your dashboard!</p>
+            </div>
+            <div class="col-md-6 text-end" style="float: left;">
+                <img src="{% static 'images/adm.png' %}" width="500" height="350"/>
+            </div>
+        <!--</div>-->
+    </div>
+    <div class="row ps-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100 shadow" style="border: none;">
+                <!--<img src="..." class="card-img-top" alt="...">-->
+                <div class="card-body">
+                  <h4 class="card-title" style="color: darkred;"><i class="fa-solid fa-users p-2" style="background-color: rgba(222, 199, 65,0.67); border-radius: 9px;"></i>&nbsp;&nbsp;Total Students</h4>
+                  <h6 class="card-text text-center fw-bolder fs-2" style="color: rgb(111, 109, 109);">{{allstudent}}</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow" style="border: none;">
+                <!--<img src="..." class="card-img-top" alt="...">-->
+                <div class="card-body">
+                  <h5 class="card-title" style="color: darkred;"><i class="fa-solid fa-pen-nib p-2" style="background-color: rgba(222, 199, 65,0.67); border-radius: 9px;"></i>&nbsp;&nbsp;Total Lectures</h5>
+                  <h6 class="card-text text-center fw-bolder fs-2" style="color: rgb(111, 109, 109);">{{alllec}}</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow" style="border: none;">
+                <!--<img src="..." class="card-img-top" alt="...">-->
+                <div class="card-body">
+                  <h5 class="card-title" style="color: darkred;"><i class="fa-solid fa-file-pen p-2" style="background-color: rgba(222, 199, 65,0.67); border-radius: 9px;"></i>&nbsp;&nbsp;Total Assignments</h5>
+                  <h6 class="card-text text-center fw-bolder fs-2" style="color: rgb(111, 109, 109);">{{allass}}</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow" style="border: none;">
+                <!--<img src="..." class="card-img-top" alt="...">-->
+                <div class="card-body">
+                  <h5 class="card-title" style="color: darkred;"><i class="fa-solid fa-comment-dots p-2" style="background-color: rgba(222, 199, 65,0.67); border-radius: 9px;"></i>&nbsp;&nbsp;Total Feedbacks</h5>
+                  <h6 class="card-text text-center fw-bolder fs-2" style="color: rgb(111, 109, 109);">{{allfeed}}</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow" style="border: none;">
+                  <!--<img src="..." class="card-img-top" alt="...">-->
+                  <div class="card-body">
+                    <h5 class="card-title" style="color: darkred;"><i class="fa-solid fa-circle-question p-2" style="background-color: rgba(222, 199, 65,0.67); border-radius: 9px;"></i>&nbsp;&nbsp;Total Complaints</h5>
+                    <h6 class="card-text text-center fw-bolder fs-2" style="color: rgb(111, 109, 109);">{{allcomp}}</h6>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow" style="border: none;">
+                  <!--<img src="..." class="card-img-top" alt="...">-->
+                  <div class="card-body">
+                    <h5 class="card-title" style="color: darkred;"><i class="fa-solid fa-circle-exclamation p-2" style="background-color: rgba(222, 199, 65,0.67); border-radius: 9px;"></i>&nbsp;&nbsp;Total Enquiries</h5>
+                    <h6 class="card-text text-center fw-bolder fs-2" style="color: rgb(111, 109, 109);">{{allenq}}</h6>
+                  </div>
+                </div>
+            </div>
+          </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

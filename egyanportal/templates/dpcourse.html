@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% extends 'courselayout.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block service %}
+    <div class="row ps-5 ms-5 pb-5">
+        <div class="col-md-12 px-5">
+            <div class="col-md-4 mt-5"  style="float: left;">
+                <div class="card shadow zoom-out" style="width: 18rem; height: 250px;">
+                    <img src="{% static 'images/pgdhet.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Post Graduate Diploma (Hindi-English) Translation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt-5"  style="float: left;">
+              <div class="card shadow zoom-out" style="width: 18rem; height: 250px;">
+                  <img src="{% static 'images/pgdys.png' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Post Graduate Diploma (Yogic Activities)</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 mt-5"  style="float: left;">
+            <div class="card shadow zoom-out" style="width: 18rem; height: 250px;">
+                <img src="{% static 'images/pgdipr.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Post Graduate Diploma (Information and Public Relations)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-5"  style="float: left;">
+          <div class="card shadow zoom-out" style="width: 18rem; height: 250px;">
+              <img src="{% static 'images/pgdmm.png' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Post Graduate Diploma (Marketing Management)</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4 mt-5"  style="float: left;">
+        <div class="card shadow zoom-out" style="width: 18rem; height: 250px;">
+            <img src="{% static 'images/pgdfm (1).png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">PG Diploma in Finance Management</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mt-5"  style="float: left;">
+      <div class="card shadow zoom-out" style="width: 18rem; height: 250px;">
+          <img src="{% static 'images/pgdjmc.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Post Graduate Diploma (Journalism and Mass Communication)</p>
+          </div>
+      </div>
+  </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

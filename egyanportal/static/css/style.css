@@ -1,0 +1,42 @@
+
+/* Default state */
+.zoom-out {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Zoom-out effect on hover */
+.zoom-out:hover {
+    transform: scale(1.1); /* Adjust the scale as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow to enhance the effect */
+}
+
+.container .card .face.face1 {
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+.container .card:hover .face.face1 {
+    background-color: white;
+    transform: translateY(0px);
+}
+.container .card .face.face1 .content i {
+    max-width: 100px;
+}
+.container .card .face.face.face2 {
+    position: relative;
+    background-color: #949597;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    transform: translateY(-100px);
+}
+.container .card:hover .face.face2 {
+    transform: translateY(0);
+}

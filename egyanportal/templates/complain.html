@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'adminpanel.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block student %}
+    <div class="row m-3">
+        <h1 class="text-center mt-3">Submit your Complain</h1>
+    </div>
+    {% for i in messages %}
+    <div class="alert alert-success m-3" role="alert">
+        {{i}}
+    </div>
+    {% endfor %}
+    <div class="row m-4">
+        <div class="col-md-12">
+            {% for i in S %}
+            <form action="{% url 'complaintsave' i.id %}" method="post" class="p-4 border bg-light shadow">
+                {% csrf_token %}
+                {% endfor %}
+                <p>Enter subject</p>
+                <input type="text" name="Subject" class="form-control rounded-0" placeholder="Enter the subject of complain">
+                <p class="mt-3">Enter your complain</p>
+                <textarea name="comp" class="form-control rounded-0" placeholder="Write your complain here!"></textarea>
+                <div class="text-center">
+                    <button class="btn w-100 rounded-0 mt-4" style="background-color: darkred; color: white;">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

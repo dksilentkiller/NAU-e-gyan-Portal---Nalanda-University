@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends 'layout.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block main %}
+    <div class="row">
+        <div class="col-sm-12" style="background-image: linear-gradient(rgba(71, 70, 70, 0.96),rgba(65, 59, 59, 0.76)) ,url('../static/images/bg2.jpg'); height: 300px; background-repeat: no-repeat; background-size: cover;">
+            <h1 style="margin-left: 50px; margin-top: 110px; color: white;">ABOUT PAGE</h1>
+            <h6 style="margin-left: 52px; margin-top: 15px; color: white;"><a style="text-decoration: none; color: gold;">About</a>&nbsp;/&nbsp;<a style="text-decoration: none;">Home</a></h6>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center pt-3">
+                <h3 class="fw-bold"><span>About </span><span style="color: darkred;"> NOU e-Gyan Portal</span></h3>
+                <hr class="fw-bold" style="color: rgb(207, 176, 2);" />
+                <p>At Nou Egyan, we are dedicated to connecting communities, empowering individuals, and fostering growth through knowledge, collaboration, and innovation. Our portal serves as a central hub for sharing resources, ideas, and opportunities that can make a difference in people’s lives.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 p-4">
+            <div class="card shadow" style="background-image: url('../static/images/who.jpg'); background-repeat: no-repeat; background-size: cover;">
+                <div class="card-header" style="background-color: darkred; color: gold;">
+                  <h4>Who We Are?</h4>
+                </div>
+                <div class="card-body">
+                    <p class="fw-bolder">"Empowering Minds, Shaping the Future."</p>
+                    <p style="text-align: justify;">At Nou Egan, we are more than just a digital platform; we are a community dedicated to innovation, collaboration, and empowerment. Our portal was born out of a passion for bridging the gap between technology and its users, ensuring that everyone, regardless of their background or expertise, has the tools and resources they need to succeed in the digital age.
+
+                        <p style="text-align: justify;">We understand that in today’s fast-paced world, staying ahead means continuously learning, adapting, and growing. That’s why we’ve created a space where creativity and knowledge converge. Whether you’re a seasoned professional looking to expand your skill set, an organization aiming to innovate, or a newcomer eager to learn, Nou Egan is your gateway to endless possibilities.</p>
+                        
+                        Our platform is designed to be a nurturing ground for ideas, where diverse perspectives come together to drive progress. We believe in the collective power of community, and we are committed to fostering an environment where collaboration thrives. Through our resources, networks, and support systems, we help individuals and organizations realize their full potential.</p>
+                    <p style="text-align: justify;">The portal is accessible from any hook and corner of the world if the system allows the permission to its users. It is also fully secured and accessible 24 x 7 to its authorised users. It will resolve the academic issues such as E-content Distribution, Delivery, Tracking, Assessment, Progress Monitoring & Controlling of all stakeholders of the system i.e. students, teachers, study centre administrators as well as Nalanda Open University Admins when they are at a distance.</p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row px-5 mb-1" style="background-image: linear-gradient(rgba(71, 70, 70, 0.96),rgba(65, 59, 59, 0.76)) ,url('../static/images/absbg.jpg'); height: 500px; background-repeat: no-repeat; background-size: cover;">
+        <div class="col-md-12 px-5">
+            <h2 class="text-center mt-5" style="color: white;">Our Mission</h2>
+            <p class="text-center mt-5 mb-5" style="color: white;">Our mission is to empower individuals and organizations by providing them with cutting-edge tools and resources to excel in their respective fields. We strive to bridge the gap between technology and its users, making it accessible and beneficial for everyone. Through our platform, we aim to inspire creativity, promote continuous learning, and drive success in an ever-evolving digital world.</p>
+            <hr style="color: white;" />
+            <h2 class="text-center mt-5" style="color: white;">Our Vision</h2>
+            <p class="text-center mt-5" style="color: white;">We envision a world where technology serves as a catalyst for positive change, enabling people to connect, learn, and grow. Our goal is to be a leading platform that not only supports the development of innovative solutions but also fosters a collaborative environment where ideas can flourish. At Nou Egan, we are dedicated to shaping the future by empowering the next generation of leaders, innovators, and creators.</p>
+        </div>
+
+    </div>
+    {% endblock %}
+</body>
+</html>

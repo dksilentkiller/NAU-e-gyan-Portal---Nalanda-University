@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% extends 'adminpanel.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block student %}
+    <h1 class="text-center mt-4" style="color: darkred;">Update Profile</h1>
+    <div class="row m-4 ms-auto me-auto">
+        <div class="col-md-12">
+            <div class="card mb-3 ms-5 shadow-lg" style="max-width: 900px;">
+                <div class="row g-0">
+                    <div class="col-md-2 text-center pt-5 ps-4">
+                        {% if uee.new_file %}
+                        <img src="{{ uee.new_file.url }}" height="200px" width="200px" class="img-fluid" 
+                          alt="Uploaded image" style="border-radius: 50%;">
+                        {% else %}
+                        No photo available
+                        {% endif %}
+                    </div>
+                    <div class="col-md-10">
+                        <div class="card-body">
+                            <h5 class="card-title">Name: {{uee.name}}</h5>
+                            <div class="row">
+                                <div class="col-sm-7 mt-2">
+                                    <h5 class="card-title">Enrollment No: {{uee.enrollment}}</h5>
+                                </div>
+                                <div class="col-sm-5 mt-2">
+                                    <h5 class="card-title">Course: {{uee.course}}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-7 mt-2">
+                                    <h5 class="card-title">Branch: {{uee.branch}}</h5>
+                                </div>
+                                <div class="col-sm-5 mt-2">
+                                    <h5 class="card-title">Year: {{uee.year}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- button -->
+     <div class="row m-3">
+        <div class="col-md-12 text-end">
+            <a href="{% url 'proupdate'  %}"><button class="btn rounded-0" style="background-color: darkred; color: white;">Update Profile</button></a>
+        </div>
+     </div>
+    <!-- table -->
+     <div class="row m-4">
+        <div class="col-md-12">
+            <table class="table text-center">
+                <tr class="table-dark">
+                    <th style="color: white;">Enrollment Number</th>
+                    <td>{{uee.enrollment}}</td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{uee.name}}</td>
+                </tr>
+                <tr>
+                    <th>Father's Name</th>
+                    <td>{{uee.fname}}</td>
+                </tr>
+                <tr>
+                    <th>Mother's Name</th>
+                    <td>{{uee.mname}}</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>{{uee.gender}}</td>
+                </tr>
+                <tr>
+                    <th>Course</th>
+                    <td>{{uee.course}}</td>
+                </tr>
+                <tr>
+                    <th>Branch</th>
+                    <td>{{uee.branch}}</td>
+                </tr>
+                <tr>
+                    <th>Year</th>
+                    <td>{{uee.year}}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{uee.address}}</td>
+                </tr>
+                <tr>
+                    <th>Mobile Number</th>
+                    <td>{{uee.mobile}}</td>
+                </tr>
+                <tr>
+                    <th>E-mail ID</th>
+                    <td>{{uee.email}}</td>
+                </tr>
+            </table>
+        </div>
+     </div>
+    {% endblock %}
+</body>
+</html>

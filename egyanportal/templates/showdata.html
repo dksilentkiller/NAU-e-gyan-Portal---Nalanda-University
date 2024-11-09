@@ -1,0 +1,65 @@
+{% extends 'adminzone.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block mainadmin %}
+               
+                 <div class="row  overflow-auto">
+                    <div class="col-sm-12 p-5 table-responsive">
+                        <table class="table table-responsive table-bordered" id="example">
+                            <thead>
+                                <tr class="table-dark">
+                                    <th>Enrollment Number </th>
+                                    <th>Name </th>
+                                    <th>Father Name</th>
+                                    <th>Mother Name</th>
+                                    <th>Gender</th>
+                                    <th>Address</th>
+                                    <th>Course</th>
+                                    <th>Branch</th>
+                                    <th>Year</th>
+                                    <th>Mobile</th>
+                                    <th>Email</th>
+                                    <!--<th>RegDate</th>-->
+                                    <th>Action</th>  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for p in Show %}
+                                <tr>
+                                    <td>{{p.enrollment}}</td>
+                                    <td>{{p.name}}</td>
+                                    <td>{{p.fname}}</td>
+                                    <td>{{p.mname}}</td>
+                                    <td>{{p.gender}}</td>
+                                    <td>{{p.address}}</td>
+                                    <td>{{p.course}}</td>
+                                    <td>{{p.branch}}</td>
+                                    <td>{{p.year}}</td>
+                                    <td>{{p.mobile}}</td>
+                                    <td>{{p.email}}</td>
+                                    <!--<td>-</td>-->
+                                    <td>
+                                            <a href="{% url 'uploaddata' p.id %}"><i class="fa-solid fa-pen-to-square" style="color: #006eff;"></i></a>
+                                            &nbsp;&nbsp;&nbsp;<a href="{% url 'deleteuser' p.id %}"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                 </div>
+
+               
+
+    {% endblock %}
+
+    
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% extends 'layout.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block main %}
+
+    
+
+    <!-- container -->
+    <div class="row">
+        <div class="col-sm-12" style="background-image: linear-gradient(rgba(71, 70, 70, 0.96),rgba(65, 59, 59, 0.76)) ,url('../static/images/bg2.jpg'); height: 300px; background-repeat: no-repeat; background-size: cover;">
+            <h1 style="margin-left: 50px; margin-top: 110px; color: white;">CONTACT PAGE</h1>
+            <h6 style="margin-left: 52px; margin-top: 15px; color: white;"><a style="text-decoration: none;">Contact</a>&nbsp;/&nbsp;<a style="text-decoration: none;">Home</a></h6>
+        </div>
+        {% for mess in messages %}
+    <div class="alert alert-primary mt-2" role="alert">
+        {{mess}}
+      </div>
+    {% endfor %}
+        <!-- section -->
+        <div class="row pb-3 pt-4">
+            <!-- info -->
+            <div class="col-md-6">
+                <div class="col-md-12 text-center me-2 shadow p-2 mt-4">
+                    <i class="fa-solid fa-location-dot fa-2x" style="color: #e00b35; padding: 10px; border: 3px dotted darkred; border-radius: 100%;"></i>
+                    <br />
+                    <h6 class="mt-2">OUR ADDRESS</h6>
+                    <p>2nd/3rd Floor, Biscomaun Bhawan, Gandhi Maidan, Patna 800 001 (BIHAR).</p>
+                </div>
+                <div class="col-md-6 text-center shadow p-2 my-3" style="float: left;">
+                    <i class="fa-solid fa-envelope fa-2x" style="color: #e00b35; padding: 10px; border: 3px dotted darkred; border-radius: 100%;"></i>
+                    <br />
+                    <h6 class="mt-2">E-MAIL ADDRESS</h6>
+                    <p> nouegyanhelp@gmail.com</p>
+                </div>
+                <div class="col-md-6 text-center shadow p-2 my-3" style="float: left;">
+                    <i class="fa-solid fa-phone-volume fa-2x" style="color: #e00b35; padding: 10px; border: 3px dotted darkred; border-radius: 100%;"></i>
+                    <br />
+                    <h6 class="mt-2">CALL US</h6>
+                    <p>+91 7080102007</p>
+                </div>
+            </div>
+            
+            <!-- info -->
+            <!-- form -->
+            <div class="col-md-6 p-4 shadow">
+                <form action="{% url 'enqsave' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="name" class="form-control mt-4" placeholder="Enter your name"/>
+                    <input type="email" name="email" class="form-control mt-3" placeholder="Enter your E-mail address" />
+                    <input type="text" name="contactno" class="form-control mt-3" placeholder="Enter your Contact Number" />
+                    <textarea name="enq" class="form-control mt-3" placeholder="Enter your enquiry message"></textarea>
+                    <div class="text-center">
+                        <input type="submit" class="btn w-100 mt-4" style="background-color: darkred; color: white;" value="SUBMIT" />
+                    </div>
+                </form>
+            </div>
+            <!-- form -->
+        </div>
+        <!-- section -->
+    </div>
+    <hr />
+    <!-- container -->
+     <!-- map -->
+     <div class="row p-3 text-center">
+        <div class="col-md-12">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.631100127145!2d85.13876997485116!3d25.617171814563143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed585a72898067%3A0x332ef319c1947f5e!2sNalanda%20Open%20University%20Patna!5e0!3m2!1sen!2sin!4v1724472740123!5m2!1sen!2sin" width="1400" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <!-- map -->
+    {% endblock %}
+</body>
+</html>

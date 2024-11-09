@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% extends 'layout.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block main %}
+    <!-- heading -->
+    <div class="row">
+        <div class="col-sm-12" style="background-image: linear-gradient(rgba(71, 70, 70, 0.96),rgba(65, 59, 59, 0.76)) ,url('../static/images/bg2.jpg'); height: 300px; background-repeat: no-repeat; background-size: cover;">
+            <h1 style="margin-left: 50px; margin-top: 110px; color: white;">LOGIN PAGE</h1>
+            <h6 style="margin-left: 52px; margin-top: 15px; color: white;"><a style="text-decoration: none; color: gold;">Login</a>&nbsp;/&nbsp;<a style="text-decoration: none;">Home</a></h6>
+        </div>
+    </div>
+    <!-- heading -->
+    <div class="row py-3">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 shadow p-4 m-5">
+            <form action="{% url 'logcode' %}" method="post">
+            {% csrf_token %}
+                <div class="text-center mb-4">
+                    <img src="{% static 'images/logo1.png' %}" alt="" height="150px"/>
+                </div>
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="email" name="userid" id="form2Example1" class="form-control rounded-0" placeholder="Enter your E-mail address" />
+                </div>
+              
+                <!-- Password input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="password" name="password" id="form2Example2" class="form-control rounded-0" placeholder="Enter your password" />
+                </div>
+
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <select name="usertype" class="dropdown form-control rounded-0">
+                        <option value="">--Select your Usertype--</option>
+                        <option value="student">Student</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                  </div>
+              
+                <!-- 2 column grid layout for inline styling -->
+                <div class="row mb-4">
+                  <!--<div class="col d-flex justify-content-center">-->
+                    <!-- Checkbox -->
+                    <!--<div class="form-check text-center">-->
+                      <!--<input class="form-check-input bg-warning" style="border: 0px;" type="checkbox" value="" id="form2Example31" checked />
+                      <label class="form-check-label" for="form2Example31"> Remember me </label>-->
+                    <!--</div>-->
+                  <!--</div>-->
+              
+                  <!--<div class="col">-->
+                    <!-- Simple link -->
+                    <!--<a href="#!" style="color: darkred;">Forgot password?</a>-->
+                  <!--</div>-->
+                </div>
+              
+                <!-- Submit button -->
+                    <input type="submit" value="Login" class="btn w-100 rounded-0 btn-block mb-4" style="background-color: darkred; color: gold; border: 0px;"/>
+                <!-- Register buttons -->
+                <!--<div class="text-center">
+                  <p>Not a member? <a href="#" style="color: darkred;">Register</a></p>
+                </div>-->
+              </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% extends 'adminzone.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block mainadmin %}
+    <h2 class="mt-4 mb-4  text-center">Add Your Program</h2>
+    <form action="{% url 'coursave' %}" method="post">
+        {% csrf_token %}
+        <div class="container">
+          <div class="row bg-light p-4 shadow">
+              <div class="col-sm-12">
+              <p class="mt-2">Add Program</p>
+              <input type="text" name="course" class="form-control border-dark rounded-0" placeholder="Enter Your Program">
+
+              </div>
+              <div class="col-sm-12 mt-3">
+                <input type="submit" class="w-100 p-2" style="background-color: darkred; border:0px; color:white;">
+              </div>
+          </div>
+        </div>
+  
+      </form>
+
+      <table class="table mt-2">
+        <thead>
+         <tr class="text-center">
+            <th style="background-color: darkred; color:white;" >Id</th>
+            <th style="background-color: darkred; color:white;" >Courses</th>
+            <th style="background-color: darkred; color:white;" >RegDate</th>
+            <th style="background-color: darkred; color:white;" >Action</th>
+         </tr>
+         {% for i in av  %}
+            <tr class="text-center">
+                <td>{{i.id}}</td>
+                <td>{{i.course}}</td>
+                <td>{{i.addate}}</td>
+                <td><a href="#"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></a></td>
+            </tr>
+         {% endfor %}
+        </thead>
+    </table>
+    {% endblock %}
+
+    
+</body>
+</html>
